@@ -51,12 +51,6 @@
 
 ![桌面端示例：题目框架、认知梯度、状态视图与交互判断](assets/example-704.png)
 
-<details>
-<summary>查看手机端完整页面截图</summary>
-
-![手机端示例：组件在窄屏下重新排列](assets/example-704-mobile.png)
-</details>
-
 ## 30 秒开始
 
 克隆仓库后，把整个目录提供给你的 Coding Agent，并要求它先阅读 `SKILL.md`：
@@ -102,7 +96,7 @@ node scripts/verify_lesson.cjs output/leetcode_704_learning.html
 
 ```text
 SKILL.md                 Agent 技能说明与生成规则
-agents/openai.yaml       Codex 技能入口信息
+agents/openai.yaml       可选的 Codex 展示配置；Claude Code、Trae 等工具可忽略
 assets/                  页面模板、样例截图与组件图
 examples/                可打开的示例 HTML 和 lesson JSON
 references/              教学设计、内容结构与验证要求
