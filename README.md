@@ -1,113 +1,112 @@
-# LeetCode 高效学习 HTML
+# LeetCode Cognitive Learning Skill
 
-把一道 LeetCode 题生成一个可以离线打开的中文交互学习页面：先建立心智模型，再观察反例和真实状态轨迹，随后手填代码槽位、独立重写，最后完成迁移训练。
+> 把一道 LeetCode 题变成可交互的认知训练，而不是再生成一份题解。
 
-![LeetCode 学习 HTML 的组件示意图：心智模型、状态轨迹、手填槽位、独立重写与迁移训练](assets/component-atlas.svg)
+大多数 AI 刷题助手回答的是：**“这道题怎么做？”**
 
-组件示意图展示了技能可生成的交互类型。每道题会使用自己的心智模型、案例和证明内容；不会把示例题的算法套用到新题。
+这个 Skill 进一步追问：**“怎样让我形成解题模型，并在没有答案的情况下重新写出来？”**
+
+它把“看懂”设计成一段练习过程：
+
+**题目 → 心智模型 → 反例 → 真实执行轨迹 → 手填关键逻辑 → 独立重写 → 迁移训练**
+
+目标不是“我理解了这段代码”，而是“没有这段代码，我还能不能重新推出来”。学习页以可离线打开的 HTML 交付；HTML 是载体，认知训练闭环才是重点。
+
+![认知训练组件图：心智模型、状态轨迹、手填代码、独立重写与迁移](assets/component-atlas.svg)
+
+## 为什么不是普通 AI 题解？
+
+普通刷题常常是：
+
+```text
+题目 → 看解释 → 看代码 → 感觉看懂了 → 下一题
+```
+
+这个 Skill 生成一套主动练习流程：
+
+```text
+题目
+  → 建立心智模型
+  → 用反例检验错误理解
+  → 跟踪真实程序状态
+  → 亲手补全关键逻辑
+  → 收起参考，独立重写
+  → 用变体题验证迁移
+```
+
+## 认知训练闭环
+
+- **心智模型**：说明本题改变了哪种决策，以及它在更大的解题框架中处于什么位置。
+- **反例**：用能击穿常见错误想法的输入检验理解。
+- **真实轨迹**：运行参考算法，逐步展示状态、决策和不变量。
+- **主动编码**：代码槽位初始为空；练习区与参考代码分开。
+- **独立重写**：从公开函数签名和空白起点重新组织解法。
+- **迁移训练**：在相近变体中辨认哪些思想保留、哪些规则改变。
+
+错误答案可以重试，模块可以自由进入；页面不预填代码，也不保存跨次学习记录。
 
 ## 页面示例
 
-以下截图来自本技能生成的 [LeetCode 704 二分查找示例](examples/leetcode_704_learning.html)。桌面版展示题目契约、认知梯度、心智模型和交互判断；手机截图展示窄屏下的重新排版。
+以下是本 Skill 生成的 [LeetCode 704 二分查找训练页](examples/leetcode_704_learning.html)。完整页面还包含真实运行轨迹、手填槽位、参考复习、独立重写和迁移训练。
 
-![桌面版 LeetCode 704 学习页面：题目框架、认知梯度和交互判断](assets/example-704.png)
+![桌面端示例：题目框架、认知梯度、状态视图与交互判断](assets/example-704.png)
 
 <details>
 <summary>查看手机端完整页面截图</summary>
 
-![手机版 LeetCode 704 学习页面：窄屏响应式布局](assets/example-704-mobile.png)
+![手机端示例：组件在窄屏下重新排列](assets/example-704-mobile.png)
 </details>
 
-示例 HTML 是单文件，可离线打开，不需要启动服务器。完整页面还包含真实运行轨迹、手填代码槽位、参考复习、独立重写与迁移训练。
+## 30 秒开始
 
-## 支持哪些编程助手
-
-这个技能本质上是一个“文件夹 + Markdown 规则 + Python/Node 脚本”，不依赖某一个 AI 编辑器。它可以用于：
-
-- Codex：将技能目录安装到 `C:\Users\<用户名>\.codex\skills\leetcode-learning-html`，然后在对话中说 `使用 $leetcode-learning-html，把 LeetCode 704 生成学习 HTML`。
-- Claude Code：把整个目录复制到项目的 `.claude/skills/leetcode-learning-html/`，或复制到个人 skills 目录；在 `CLAUDE.md` 中写入“生成 LeetCode 学习页面时读取该目录的 SKILL.md”，然后直接提出题目请求。
-- Trae：把目录放在项目中，例如 `.trae/skills/leetcode-learning-html/`，在项目规则中引用 `SKILL.md`；也可以直接运行下面的命令生成页面，再让 Trae 检查和修改 `lesson.json`。
-- Cursor、Cline、Aider 及其他编译器：将 `SKILL.md`、`references/`、`assets/` 和 `scripts/` 一起放入项目，要求助手先阅读 `SKILL.md`，再按命令行流程工作。
-- 纯命令行：不需要 AI 助手，直接准备 `lesson.json`，运行构建脚本即可。
-
-技能目录可以放在项目中，也可以放在各工具的个人规则目录。不要只复制 `SKILL.md`；模板和验证脚本也需要一起复制。
-
-## 最简单的使用方式
-
-对支持技能的助手直接说：
+克隆仓库后，把整个目录提供给你的 Coding Agent，并要求它先阅读 `SKILL.md`：
 
 ```text
-使用 $leetcode-learning-html，把 LeetCode 226 翻转二叉树生成一份中文、Python、可离线打开的学习 HTML。
-要求：包含树结构动画、非对称反例、手填槽位、独立重写和迁移到对称二叉树。
+请先阅读 SKILL.md，然后把 LeetCode 226 翻转二叉树设计成一套认知训练。
+使用中文和 Python，包含能暴露错误模型的反例、真实状态轨迹、空白代码槽位、
+独立重写，以及迁移到一个结构相近但规则不同的问题。输出可离线打开的 HTML。
 ```
 
-也可以给题目链接或完整题面：
+支持 Codex、Claude Code、Trae、Cursor、Cline、Aider 等工具。支持技能目录的工具可将本仓库作为技能安装；其他工具可以把目录加入项目规则，并要求 Agent 读取 `SKILL.md`。Claude Code 可复制到 `.claude/skills/leetcode-learning-html/`；Trae 等工具可在项目规则中引用该文件。
 
-```text
-请把 https://leetcode.com/problems/search-insert-position/ 生成认知训练页面。
-槽位必须为空，所有模块自由进入，不保存学习历史，输出到 output/leetcode_35.html。
-```
+只有题号或链接时，Agent 应先核实题意、约束、函数签名和返回语义。遇到无法确认的题面，不编造题目细节。
 
-只有题号时，助手需要先确认题意、约束和签名；无法确认的题面不应被编造。
+## 命令行生成
 
-## 命令行流程
-
-先创建一个 `lesson.json`。字段格式见 [`references/content-schema.md`](references/content-schema.md)。然后执行：
+也可以直接准备符合 [`references/content-schema.md`](references/content-schema.md) 的 `lesson.json`，不依赖任何 AI 编辑器：
 
 ```powershell
-python scripts/build_lesson.py lesson.json --output output/leetcode_704.html
-node scripts/verify_lesson.cjs output/leetcode_704.html
+python scripts/build_lesson.py lesson.json --output output/lesson.html
+node scripts/verify_lesson.cjs output/lesson.html
 ```
 
-如果页面需要返回课程主页，可加一个相对于输出文件的本地路径：
-
-```powershell
-python scripts/build_lesson.py lesson.json --output output/leetcode_704.html --home ../index.html
-```
-
-修改模板或构建器后运行单元检查：
-
-```powershell
-python scripts/test_builder.py
-```
-
-生成一个完整的 #704 演示页面：
+仓库中的完整示例可重新生成：
 
 ```powershell
 python scripts/demo_binary_search.py --output-dir output
 node scripts/verify_lesson.cjs output/leetcode_704_learning.html
 ```
 
-`build_lesson.py` 会校验六个学习模块、案例帧、图节点、槽位绑定、答案不泄露和 Python 代码语法。`verify_lesson.cjs` 会在浏览器中检查模块逆序进入、轨迹前进后退、普通答题不打开参考、槽位初始为空、草稿保留、重新载入清空，以及 390px/1440px 布局。
+## 设计原则
 
-## 页面默认行为
+- 轨迹由运行的算法生成，不靠模型凭空编写每一步状态。
+- 手填槽位与独立编辑器不自动填入答案；参考视图与练习区分开。
+- 选项、导航、检查和参考入口绑定到明确动作，不从按钮文字猜行为。
+- 学习模块可自由进入；查看参考或进入模块不算作掌握。
+- 刷新页面或重新打开时重新开始；同一次访问中切换模块可保留草稿。
+- 检查结果只陈述实际验证过的内容；没有真实运行器时，不把关键词匹配说成算法通过。
 
-- 代码槽位和独立编辑器不预填答案。
-- 参考代码与练习编辑器分开，查看参考不会完成训练。
-- 普通选项使用明确的动作标记，按钮文字包含“答案”不会自动被当作参考入口。
-- 学习模块和迁移模块自由进入。
-- 学习状态只存在当前页面内；刷新或重新进入会重新开始。
-- 错误选择可以重试，不会自动替换成正确答案。
+教学方法详见 [`references/teaching-design.md`](references/teaching-design.md)，页面字段见 [`references/content-schema.md`](references/content-schema.md)，交付前核对见 [`references/verification.md`](references/verification.md)。
 
-详细设计规则见 [`references/teaching-design.md`](references/teaching-design.md)，交付前检查见 [`references/verification.md`](references/verification.md)。
-
-## 项目结构
+## 仓库内容
 
 ```text
-leetcode-learning-html/
-├── SKILL.md
-├── README.md
-├── agents/openai.yaml
-├── assets/lesson-shell.html
-├── assets/lesson.css
-├── assets/lesson.js
-├── assets/component-atlas.svg
-├── assets/example-704.png
-├── assets/example-704-mobile.png
-├── examples/leetcode_704_learning.html
-├── examples/lesson.json
-├── references/
-└── scripts/
+SKILL.md                 Agent 技能说明与生成规则
+agents/openai.yaml       Codex 技能入口信息
+assets/                  页面模板、样例截图与组件图
+examples/                可打开的示例 HTML 和 lesson JSON
+references/              教学设计、内容结构与验证要求
+scripts/                 构建、示例生成和验证脚本
 ```
 
-本技能抽取自算法认知实验室中的数组、链表、树、二分、图和动态规划页面；它提取的是可迁移的教学机制，不会把 #704 的算法模板硬套到其他题目。
+本 Skill 提炼了数组、链表、树、二分、图和动态规划训练页中的可迁移教学机制。每道新题都需要自己的模型、反例和证明，不会把示例题的算法模板直接套用过去。

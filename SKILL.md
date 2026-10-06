@@ -1,11 +1,17 @@
 ---
 name: leetcode-learning-html
-description: "把一道 LeetCode 题生成可离线打开的中文交互学习 HTML，包含心智模型、反例、真实状态轨迹、手填代码槽位、独立重写和迁移训练。适用于算法认知实验室与高效刷题学习页面。"
+description: >
+  Turn a LeetCode problem number, URL, or statement into an interactive
+  cognitive-training workflow. Use when a user wants to learn or practice
+  algorithms through mental models, counterexamples, verified execution
+  traces, fill-in-code exercises, independent rewriting, and transfer
+  problems. Defaults to Chinese explanations and Python; produces an
+  offline HTML learning page unless the user requests another format.
 ---
 
-# LeetCode 高效学习 HTML
+# LeetCode Cognitive Learning Skill
 
-将用户给出的题号、题目链接或完整题面，变成可以独立打开的学习页面。默认中文讲解、Python 解题代码、单文件离线 HTML；用户指定的语言和交付方式优先。
+将用户给出的 LeetCode 题号、链接或完整题面，转化为一套让学习者从理解模型走到独立编码和迁移应用的认知训练。默认中文讲解、Python 解题代码，并以单文件离线 HTML 交付；用户指定的语言和交付方式优先。
 
 ## 生成流程
 
