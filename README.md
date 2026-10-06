@@ -10,9 +10,13 @@
 
 以下截图来自本技能生成的 [LeetCode 704 二分查找示例](examples/leetcode_704_learning.html)。桌面版展示题目契约、认知梯度、心智模型和交互判断；手机截图展示窄屏下的重新排版。
 
-| 桌面页面：题目框架与交互判断 | 手机页面：响应式布局 |
-| --- | --- |
-| ![桌面版 LeetCode 704 学习页面](assets/example-704.png) | ![手机版 LeetCode 704 学习页面](assets/example-704-mobile.png) |
+![桌面版 LeetCode 704 学习页面：题目框架、认知梯度和交互判断](assets/example-704.png)
+
+<details>
+<summary>查看手机端完整页面截图</summary>
+
+![手机版 LeetCode 704 学习页面：窄屏响应式布局](assets/example-704-mobile.png)
+</details>
 
 示例 HTML 是单文件，可离线打开，不需要启动服务器。完整页面还包含真实运行轨迹、手填代码槽位、参考复习、独立重写与迁移训练。
 
