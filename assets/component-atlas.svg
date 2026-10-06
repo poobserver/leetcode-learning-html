@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">LeetCode 学习 HTML 组件图谱</title>
+  <desc id="desc">展示题目契约、心智模型、交互轨迹、手填代码槽位、独立重写和迁移训练等组件。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8f6ee"/><stop offset="1" stop-color="#edf2e7"/></linearGradient>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#153c32"/><stop offset="1" stop-color="#276b56"/></linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#20392f" flood-opacity=".08"/></filter>
+    <style>
+      text{font-family:Inter,"Microsoft YaHei","PingFang SC",sans-serif;fill:#20392f}.muted{fill:#77847a}.eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;fill:#c88d3c}.title{font-size:33px;font-weight:800}.lead{font-size:16px;fill:#e2eadc}.cardtitle{font-size:18px;font-weight:750}.small{font-size:12px}.tiny{font-size:10px}.white{fill:#fff}.green{fill:#276b56}.gold{fill:#c88d3c}.red{fill:#c76555}
+    </style>
+  </defs>
+  <rect width="1200" height="900" rx="30" fill="url(#bg)"/>
+  <rect x="34" y="34" width="1132" height="180" rx="24" fill="url(#hero)"/>
+  <text x="68" y="72" class="eyebrow" fill="#e1b265">LEETCODE LEARNING HTML · COMPONENT ATLAS</text>
+  <text x="68" y="119" class="title white">从理解题意，到独立写出解法</text>
+  <text x="68" y="153" class="lead">把一题拆成可观察、可操作、可迁移的训练组件</text>
+  <g transform="translate(68 174)">
+    <rect width="115" height="25" rx="12" fill="#ffffff1c"/><text x="14" y="17" class="tiny white">自由进入模块</text>
+    <rect x="126" width="138" height="25" rx="12" fill="#ffffff1c"/><text x="140" y="17" class="tiny white">代码槽位由学习者填写</text>
+    <rect x="275" width="134" height="25" rx="12" fill="#ffffff1c"/><text x="289" y="17" class="tiny white">每次进入重新开始</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="34" y="238" width="548" height="286" rx="20" fill="#fffefa" stroke="#dfe5d8"/>
+    <rect x="618" y="238" width="548" height="286" rx="20" fill="#fffefa" stroke="#dfe5d8"/>
+    <rect x="34" y="548" width="548" height="286" rx="20" fill="#fffefa" stroke="#dfe5d8"/>
+    <rect x="618" y="548" width="548" height="286" rx="20" fill="#fffefa" stroke="#dfe5d8"/>
+  </g>
+  <!-- Cognitive ladder -->
+  <text x="62" y="278" class="eyebrow">01 · BUILD THE MODEL</text>
+  <text x="62" y="310" class="cardtitle">心智模型与题目框架</text>
+  <text x="62" y="334" class="small muted">从局部直觉，逐步建立可证明的不变量</text>
+  <g transform="translate(62 360)">
+    <rect width="113" height="89" rx="12" fill="#f5f3e9" stroke="#e4e2d5"/><text x="13" y="24" class="eyebrow">LEVEL 01</text><text x="13" y="49" class="small">线性候选</text><text x="13" y="70" class="tiny muted">理解任务对象</text>
+    <path d="M120 44h18" stroke="#c88d3c" stroke-width="2"/><path d="m134 39 6 5-6 5" fill="none" stroke="#c88d3c" stroke-width="2"/>
+    <rect x="147" width="113" height="89" rx="12" fill="#e7eedf" stroke="#aac19d"/><text x="160" y="24" class="eyebrow">LEVEL 02</text><text x="160" y="49" class="small">整段排除</text><text x="160" y="70" class="tiny muted">证明候选可丢弃</text>
+    <path d="M267 44h18" stroke="#c88d3c" stroke-width="2"/><path d="m281 39 6 5-6 5" fill="none" stroke="#c88d3c" stroke-width="2"/>
+    <rect x="294" width="113" height="89" rx="12" fill="#f5f3e9" stroke="#e4e2d5"/><text x="307" y="24" class="eyebrow">LEVEL 03</text><text x="307" y="49" class="small">边界位置</text><text x="307" y="70" class="tiny muted">重新定义答案空间</text>
+    <path d="M414 44h18" stroke="#c88d3c" stroke-width="2"/><path d="m428 39 6 5-6 5" fill="none" stroke="#c88d3c" stroke-width="2"/>
+    <rect x="441" width="75" height="89" rx="12" fill="#f5f3e9" stroke="#e4e2d5"/><text x="451" y="24" class="eyebrow">04</text><text x="451" y="49" class="small">迁移</text><text x="451" y="70" class="tiny muted">新契约</text>
+  </g>
+  <text x="62" y="481" class="tiny muted">每道题在框架中的具体位置与变化都会明确说明。</text>
+  <!-- State trace -->
+  <text x="646" y="278" class="eyebrow">02 · SEE EVERY DECISION</text>
+  <text x="646" y="310" class="cardtitle">真实状态轨迹与即时反馈</text>
+  <text x="646" y="334" class="small muted">步进观察边界、候选区间、中点和排除依据</text>
+  <g transform="translate(646 360)">
+    <rect width="492" height="58" rx="12" fill="#f4f5ee" stroke="#e0e5d8"/>
+    <g font-weight="700" text-anchor="middle"><rect x="13" y="10" width="48" height="38" rx="8" fill="#fff" stroke="#dce3d7"/><text x="37" y="34" class="small">2</text><rect x="69" y="10" width="48" height="38" rx="8" fill="#fff" stroke="#dce3d7"/><text x="93" y="34" class="small">5</text><rect x="125" y="10" width="48" height="38" rx="8" fill="#fff" stroke="#dce3d7"/><text x="149" y="34" class="small">8</text><rect x="181" y="10" width="48" height="38" rx="8" fill="#fff" stroke="#dce3d7"/><text x="205" y="34" class="small">12</text><rect x="237" y="7" width="54" height="44" rx="9" fill="#fff4df" stroke="#c88d3c" stroke-width="2"/><text x="264" y="34" class="small">16</text><rect x="299" y="10" width="48" height="38" rx="8" fill="#fff" stroke="#dce3d7"/><text x="323" y="34" class="small">21</text><rect x="355" y="10" width="48" height="38" rx="8" fill="#fff" stroke="#dce3d7"/><text x="379" y="34" class="small">27</text><rect x="411" y="10" width="48" height="38" rx="8" fill="#fff" stroke="#dce3d7"/><text x="435" y="34" class="small">31</text></g>
+    <text x="247" y="66" class="tiny gold">mid</text>
+    <rect y="82" width="150" height="48" rx="10" fill="#f5f3e9"/><text x="13" y="101" class="tiny muted">候选区间</text><text x="13" y="120" class="small">[left, right]</text>
+    <rect x="161" y="82" width="150" height="48" rx="10" fill="#f5f3e9"/><text x="174" y="101" class="tiny muted">比较结果</text><text x="174" y="120" class="small">nums[mid] &lt; target</text>
+    <rect x="322" y="82" width="170" height="48" rx="10" fill="#e8f0e1"/><text x="335" y="101" class="tiny muted">当前证明</text><text x="335" y="120" class="small green">排除 mid 及左侧</text>
+    <rect y="145" width="492" height="39" rx="10" fill="#fff4f0" stroke="#efd0c7"/><text x="13" y="169" class="small red">错误选项可重试，并解释哪条证据不成立。</text>
+  </g>
+  <!-- Code slots -->
+  <text x="62" y="588" class="eyebrow">03 · WRITE IT YOURSELF</text>
+  <text x="62" y="620" class="cardtitle">手填代码槽位</text>
+  <text x="62" y="644" class="small muted">只给结构与提示；每个输入框都由学习者亲自完成</text>
+  <g transform="translate(62 668)">
+    <rect width="492" height="112" rx="13" fill="#f1f3ec"/>
+    <text x="18" y="28" font-family="Consolas,monospace" font-size="14">while left &lt;= right:</text>
+    <text x="36" y="58" font-family="Consolas,monospace" font-size="14">mid = </text><rect x="91" y="39" width="184" height="29" rx="7" fill="#fffefa" stroke="#adc29f" stroke-width="2"/><text x="105" y="58" class="tiny muted">请独立填写</text>
+    <text x="36" y="91" font-family="Consolas,monospace" font-size="14">if nums[mid] &lt; target:</text>
+    <rect x="232" y="73" width="229" height="26" rx="7" fill="#fffefa" stroke="#adc29f" stroke-width="2"/><text x="245" y="91" class="tiny muted">提示：哪一段已不可能？</text>
+    <rect x="360" y="12" width="116" height="26" rx="13" fill="#e4eddd"/><text x="377" y="30" class="tiny green">初始保持空白</text>
+  </g>
+  <text x="62" y="805" class="tiny muted">查看参考代码会暂时收起练习区，返回后保留本次草稿。</text>
+  <!-- Rewrite and transfer -->
+  <text x="646" y="588" class="eyebrow">04 · REWRITE &amp; TRANSFER</text>
+  <text x="646" y="620" class="cardtitle">独立重写与新题迁移</text>
+  <text x="646" y="644" class="small muted">从公开接口开始写，再判断哪些思路保留、哪些规则改变</text>
+  <g transform="translate(646 668)">
+    <rect width="224" height="112" rx="13" fill="#f1f3ec"/><text x="16" y="25" class="tiny gold">独立重写</text><text x="16" y="49" font-family="Consolas,monospace" font-size="12">class Solution:</text><text x="16" y="70" font-family="Consolas,monospace" font-size="12">  def search(...):</text><text x="16" y="92" font-family="Consolas,monospace" font-size="12" fill="#8a948b">    pass</text>
+    <path d="M234 56h26" stroke="#c88d3c" stroke-width="2"/><path d="m253 50 7 6-7 6" fill="none" stroke="#c88d3c" stroke-width="2"/>
+    <rect x="271" width="221" height="112" rx="13" fill="#f1f3ec"/><text x="287" y="25" class="tiny gold">迁移任务 · #35</text><text x="287" y="51" class="small">保留：有序候选上的</text><text x="287" y="69" class="small">整段排除</text><text x="287" y="91" class="small">改变：从命中改为定位边界</text>
+  </g>
+  <text x="646" y="805" class="tiny muted">模块可自由进入；刷新或重新打开会重新开始。</text>
+  <text x="600" y="872" text-anchor="middle" class="tiny muted">示意图展示可生成组件；具体题目会替换为题目专属内容、案例与证明。</text>
+</svg>
